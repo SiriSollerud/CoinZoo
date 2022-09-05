@@ -3,6 +3,7 @@ import "./Coins.css";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import { animals } from "./AnimalNames";
 
+//TODO:change to bannedCoins instead and have full coin name?
 let bannedWords = [
   "share",
   "quant",
@@ -22,6 +23,12 @@ let bannedWords = [
   "rebate",
   "cbat",
   "cratos",
+  "elvantis",
+  "cooperative",
+  "concentrated",
+  "quadrant",
+  "frame",
+  "battle",
 ];
 
 function containsBannedWords(coin) {
