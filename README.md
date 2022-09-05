@@ -1,4 +1,4 @@
-![CoinZoo screenshot](https://github.com/SiriSollerud/CoinZoo/tree/main/src/assets)
+![CoinZoo screenshot](https://raw.githubusercontent.com/SiriSollerud/CoinZoo/main/src/assets/CoinZoo_screenshot.png)
 
 # Getting Started with Create React App
 
