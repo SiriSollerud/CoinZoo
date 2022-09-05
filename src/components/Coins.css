@@ -33,7 +33,7 @@
 .coin-row:hover {
   transform: scale(1.04);
   transition: 0.3s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 img {
@@ -46,6 +46,16 @@ img {
   display: flex;
   align-items: center;
 }
+
+.green {
+  color: rgb(15, 184, 15);
+}
+
+.red {
+  color: rgb(208, 43, 43);
+}
+
+
 
 @media screen and (max-width: 720px) {
   .hide-mobile {
