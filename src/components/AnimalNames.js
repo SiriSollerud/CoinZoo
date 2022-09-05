@@ -164,7 +164,6 @@ var animals = [
   "quetzal",
   "rabbit",
   "raccoon",
-  "rail",
   "ram",
   "rat",
   "raven",
@@ -172,7 +171,6 @@ var animals = [
   "red panda",
   "reindeer",
   "rhinoceros",
-  "rook",
   "salamander",
   "salmon",
   "sand dollar",
@@ -222,6 +220,6 @@ var animals = [
   "worm",
   "wren",
   "yak",
-  "zebra"
-]
-export {animals}
+  "zebra",
+];
+export { animals };

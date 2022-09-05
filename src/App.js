@@ -4,27 +4,51 @@ import Coins from "./components/Coins";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [coins, setCoins] = useState([]);
+  const [coins, setCoinsPage1] = useState([]);
+  const [coins2, setCoinsPage2] = useState([]);
+  const [coins3, setCoinsPage3] = useState([]);
 
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=false";
+  const getCoinGeckoData = () => {
+    // CoinGecko api only displays 250 coins per page
+    // Therefore, in order to get more coins I need several API calls
+    // As of now 750 coins total are fetched
+    let endpoints = [
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false",
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=2&sparkline=false",
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=3&sparkline=false",
+    ];
 
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setCoins(response.data);
-        console.log(response.data[0]);
+    Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+      .then(([{ data: page1 }, { data: page2 }, { data: page3 }]) => {
+        setCoinsPage1(page1);
+        setCoinsPage2(page2);
+        setCoinsPage3(page3);
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  useEffect(() => {
+    getCoinGeckoData();
   }, []);
 
   return (
     <>
       <Navbar />
+      <div className="heading">
+        <p>#</p>
+        <p>Coin</p>
+        <p>Price</p>
+        <p>24h Change</p>
+        <p className="hide-mobile">Volume</p>
+        <p className="hide-mobile">Market Cap</p>
+      </div>
+
+      {/* TODO: Wish I knew how to add all the api data in one array, and then only have <Coins coins={coins} /> once*/}
       <Coins coins={coins} />
+      <Coins coins={coins2} />
+      <Coins coins={coins3} />
     </>
   );
 }
