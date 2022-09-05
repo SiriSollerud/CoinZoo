@@ -36,13 +36,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="heading">
-        <p>#</p>
-        <p>Coin</p>
-        <p>Price</p>
-        <p>24h Change</p>
-        <p className="hide-mobile">Volume</p>
-        <p className="hide-mobile">Market Cap</p>
+      <div className="container">
+        <div className="heading">
+          <p>#</p>
+          <p>Coin</p>
+          <p>Price</p>
+          <p>24h Change</p>
+          <p className="hide-mobile">Volume</p>
+          <p className="hide-mobile">Market Cap</p>
+        </div>
       </div>
 
       {/* TODO: Wish I knew how to add all the api data in one array, and then only have <Coins coins={coins} /> once*/}
