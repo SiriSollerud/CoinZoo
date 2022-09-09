@@ -30,11 +30,12 @@
   padding: 0.7rem 1rem;
 }
 
-.coin-row:hover {
+/* Could include hover if it actually links somewhere/is clickable */
+/* .coin-row:hover {
   transform: scale(1.02);
   transition: 0.3s ease-in-out;
-  /* cursor: pointer; */
-}
+  cursor: pointer;
+} */
 
 img {
   height: 40px;
